@@ -2,18 +2,74 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="UTF-8">
-	<title>東宝シネマズ</title>
+	<title>キャルシネマ</title>
 </head>
-<body>
+<header>
+	<!-- メニューバー -->
+	<p><h1>キャルシネマ</h1>
+			"${obj.name}"さん、こんにちは！
+	</p>
+	<nav class="gnav">
+		<ul class="menu">
+			<li><a href="">ホーム</a></li>
+			<li><a href="">作品紹介</a></li>
+			<li><a href="">予約する</a></li>
+			<li><a href="">予約変更と削除</a></li>
+			<li><a href="">劇場案内</a></li>
+		</ul>
+	</nav>
+</header>
+	
+<main>
+	<!-- お知らせ -->
+	<div class="news">
+	<h3>お知らせ</h3>
+	<ul>
+		<li>11月13日　新作公開</li>
+		<li>11月01日　システムメンテナンスのお知らせ</li>
+		<li>10月20日　ご来場にあたってのお願い</li>
+	</ul>
+	</div>
+	
+	<!-- ピックアップ -->
 	<div>
-		<!-- 作品一覧 -->
+		<img src="">
+		<h5>"${obj.movie_title}"</h5>
+		<p>"${obj.summery}"</p>
+	</div>
+	
+	<!--<div>
 		<h3><a th:href="@{/function/1}">映画1</a></h3>
 		<h3><a th:href="@{/function/2}">映画2</a></h3>
 		<h3><a th:href="@{/function/3}">映画3</a></h3>
 		<h3><a th:href="@{/function/4}">映画4</a></h3>
 		<h3><a th:href="@{/function/5}">映画5</a></h3>
-		<h3><a th:href="@{/function/6}">映画6</a></h3>
+		<h3><a th:href="@{/function/6}">映画6</a></h3>-->
 		
 	</div>
-</body>
+</main>
+
+	<!-- ページ下部-->
+<footer>
+	<div class="footer_link">
+	<ul>
+		<li>企業情報</li>
+		<li>個人情報の取扱いについて</li>
+		<li>特定商取引法に基づく表記</li>
+		<li>ご利用に際して</li>
+		<li>キャルシネマ利用規約</li>
+		<li>Cookieの設定</li>
+	</ul>
+	</div>
+	
+	<!-- コピーライト-->
+	<div>	
+	<p>© Kohe makes a name of our taeam.</p>
+	</div>
+	
+	<!-- SNS スクリプトコード -->
+	<div >
+		
+	</div>
+</footer>
 </html>

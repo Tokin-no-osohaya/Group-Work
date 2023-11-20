@@ -6,4 +6,5 @@ import com.example.demo.entity.Movie;
 
 //Movieテーブル：リポジトリ
 public interface MovieCrudRepository extends CrudRepository<Movie,Integer>{
+	
 }
