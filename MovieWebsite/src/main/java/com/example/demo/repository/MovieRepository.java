@@ -5,6 +5,6 @@ import org.springframework.data.repository.CrudRepository;
 import com.example.demo.entity.Movie;
 
 //Movieテーブル：リポジトリ
-public interface MovieCrudRepository extends CrudRepository<Movie,Integer>{
+public interface MovieRepository extends CrudRepository<Movie,Integer>{
 	
 }
