@@ -10,8 +10,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Movie {
-	@Id
 	//作品番号
+	@Id
 	private Integer id;
 	//タイトルに対応
 	private String movieTitle;

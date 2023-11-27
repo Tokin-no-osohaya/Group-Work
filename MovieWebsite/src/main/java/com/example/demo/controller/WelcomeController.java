@@ -7,11 +7,24 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class WelcomeController {
-	//画面を表示する
+	//スプラッシュスクリーンを表示する
+	@GetMapping("first")
+	public String showSplash() {
+		return "splash";
+	}
+	
+	//トップ画面を表示する
 	@GetMapping("show")
 	public String showView() {
 		//戻り値は「ビュー名」を返す
-		return "show";
+		return "index";
+	}
+	
+	//一覧画面を表示する
+	@GetMapping("view")
+	public String showall() {
+		//戻り値は「ビュー名」を返す
+		return "all";
 	}
 
 //リンク処理

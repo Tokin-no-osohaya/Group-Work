@@ -21,7 +21,7 @@ public class MovieWebsiteApplication {
 	//実行メソッド
 	private void execute() {
 		//表示
-		showOne(1);
+		showOne();
 	}
 	
 	//idに合致した作品のみを取得

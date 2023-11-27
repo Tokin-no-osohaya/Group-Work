@@ -1,0 +1,218 @@
+@charset "UTF-8";
+@font-face {
+	font-family:'キー';
+	src: local('Key-Regular.otf');
+	font-family:'マキナス';
+	src: local('Makinas-4-Square.otf');
+	font-family:'NotoSans';
+	src: local('NotoSansJP-Light.ttf');
+}
+
+*{
+	margin:0;
+	padding:0;
+}
+
+html {
+	background-color:#000000; /* 周囲の背景色 */
+	padding:0;
+}
+
+body {
+	padding: 0;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	margin-right: 100px;
+	margin-left: 100px;
+	background-color: #FFFFFF;	
+}
+
+.container{
+	height: 100%;
+	width: 80%;/*中央の幅の指定*/
+	margin: 0 auto;
+	background: #FFFFFF;
+	color:#000000;
+	font-family:'NotoSans','游ゴシック','メイリオ','ヒラギノ角ゴシック','Arial',sans-serif;
+	font-size:normal;
+	font-weight:normal;
+	letter-spacing:normal;
+	line-height: 1.5;
+	word-break: break-all;
+}
+
+article{
+	color:#000000;
+	font-family:'NotoSans','游ゴシック','メイリオ','ヒラギノ角ゴシック','Arial',sans-serif;
+	font-weight: normal;
+	letter-spacing:normal;
+	line-height: 1.5;
+	word-break: break-all;
+}
+
+h1{
+	color: #ec541c;;
+	font-family:'キー','游ゴシック','メイリオ','ヒラギノ角ゴシック','Arial',sans-serif;
+	font-size: 70px;
+	font-weight:normal;
+	letter-spacing:normal;
+	line-height: 1.5;
+	word-break: break-all;
+}
+
+h2,h3,h4,h5,h6 {
+	font-family:'マキナス','游ゴシック','メイリオ','ヒラギノ角ゴシック','Arial',sans-serif;
+}
+
+.pickup{
+	text-decoration:underline;
+}
+
+nav{
+	display:block;
+}
+
+.grobal-nav ul{
+	display: flex;
+	padding:0.5em;
+	border:solid;
+}
+
+.menu li{
+	list-style-type: none;
+	display:list-item;
+	color:rgb(211, 211, 211);
+	background-color: #000000!important;
+}
+
+
+.global-nav ul li a{
+	display:block;
+	text-decoration: none;
+	transition: all 0.3s;
+}
+
+@media (min-width: 640px) {
+ 	.menu li {
+		display: inline-block;  /* 横に並べる */
+ 	}
+}
+
+p {
+ 	margin: 2em 0;
+ 	font-size: 15px;
+}
+
+header{
+	padding:10px;
+	height:200px;
+	width:100%;
+	display:flex;
+	justify-content: space-between;
+	background-color: #FFFFFF;
+	font-family:'NotoSans','游ゴシック','メイリオ','ヒラギノ角ゴシック','Arial',sans-serif;
+	font-weight:normal;
+	letter-spacing:normal;
+	line-height: 1.5;
+	word-break: break-all;
+	text-align: justify;
+}
+
+.title{
+	margin:5px;
+	display: flex;
+	line-height: 100px;
+	justify-content: space-between;
+	text-align: center;
+}
+
+.account{
+	line-height: 150px;
+	text-align: center;
+}
+
+header.fixed{
+	position: fixed;/*fixedを設定して固定*/
+	z-index: 999;/*最前面へ*/
+	top:0;/*位置指定*/
+	left:0;/*位置指定*/
+}
+
+footer{
+	width: 100%;
+	background-color: #999999;
+	font-family:'NotoSans','游ゴシック','メイリオ','ヒラギノ角ゴシック','Arial',sans-serif;
+	text-align: center;
+	font-size:14px;
+	font-weight:normal;
+	letter-spacing:normal;
+	line-height: 1.5;
+	word-break: break-all;
+}
+
+.footer-link{
+	text-align:center;
+}
+
+.footer-link li{
+	padding: 8px 20px;
+	display:inline;
+	list-style: none;
+    border-bottom: none;
+}
+
+ol,ul {
+	list-style: none;
+}
+
+small{
+	color:#fff;
+	display: block;
+	text-align: center;
+	padding:20px;
+}
+
+pre {
+	font-size: inherit;
+}
+
+blockquote {
+	
+}
+
+table {
+	max-width: 100%;
+}
+
+th,td {
+	padding: .5em;
+}
+
+iframe {
+	max-width: 100%;
+}
+
+input,textarea,button {
+	font-size: inherit;
+	line-height: '';
+}
+
+code {
+	font-size: inherit;
+	word-break: break-all;
+}
+
+img {
+	max-width: 100%;
+}
+
+a{
+	color: #FFFFFF;
+	text-decoration:none;
+	background-color:transparent
+}
+
+a:hover{
+	color:#666666;
+	text-decoration: none;
+}

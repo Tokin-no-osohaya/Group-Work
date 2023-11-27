@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+		xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="UTF-8">
+<title>ベース：レイアウト</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="stylesheet" href="main.css">
+	<link rel="stylesheet" href="sanitize.css">
+	<link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
+
+</head>
+<body>
+	<div class="container">
+	<!-- 共通ヘッダー -->
+<header>
+	<div class="title">
+		<h1>キャルシネマ</h1>
+		<div class="account">
+			<h5>[[${name}]]さん、こんにちは！</h5>
+		</div>
+	</div>
+</header>
+
+	<!-- メニューバー -->
+	<div id="one" th:insert="menubar :: home"></div>
+	<div id="two" th:insert="menubar :: introduction"></div>
+	<div id="three" th:insert="menubar :: reservation"></div>
+	<div id="four" th:insert="menubar :: changeAndDelete"></div>
+	<div id="five" th:insert="menubar :: guide"></div>
+	
+	<!-- 置き換え場所 -->
+	<div layout:fragment="content" align="left">置き換える</div>
+	
+	<!-- 共通フッター -->
+<footer>
+	<ul class="footer-link">
+		<li><a href="">企業情報</a></li>
+		<li><a href="">個人情報の取扱いについて</a></li>
+		<li><a href="">特定商取引法に基づく表記</a></li>
+		<li><a href="">ご利用に際して</a></li>
+		<li><a href="">キャルシネマ利用規約</a></li>
+		<li><a href="">Cookieの設定</a></li>
+	</ul>
+	
+	<!-- コピーライト-->
+	<small>&copy; Kohei makes a name of our team.</small>
+	
+	<!-- SNS スクリプトコード -->
+	<div >
+		
+	</div>
+</footer>
+</div>
+
+	<!-- ナビゲーションファイルの埋め込み -->
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<!--自作のJS-->
+	<script src="gnav.js"></script>
+</body>
+</html>
