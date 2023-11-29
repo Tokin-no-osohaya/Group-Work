@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="MovieWebsite/src/main/java"/>
+	<classpathentry kind="src" path="MovieWebsite/src/test/java"/>
+	<classpathentry kind="lib" path="MovieWebsite/gradle/wrapper/gradle-wrapper.jar"/>
+	<classpathentry kind="lib" path="C:/Users/3030966/.gradle/caches/modules-2/files-2.1/org.springframework/spring-web/6.0.13/c374fcaf34d82d735a1dcf2c496f064488aa2b20/spring-web-6.0.13.jar" sourcepath="C:/Users/3030966/.gradle/caches/modules-2/files-2.1/org.springframework/spring-web/6.0.13/fad075294ad1d15c24c75663272be8c648130c7d/spring-web-6.0.13-sources.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/3030966/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context/6.0.13/4c49af6dde7fce9602049f952b45ca29f30e2a37/spring-context-6.0.13.jar" sourcepath="C:/Users/3030966/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context/6.0.13/d9d3afc2ea6b37c1c7a9d67ade93b5b202b70ed0/spring-context-6.0.13-sources.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/3030966/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-annotations/2.15.3/79baf4e605eb3bbb60b1c475d44a7aecceea1d60/jackson-annotations-2.15.3.jar" sourcepath="C:/Users/3030966/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-annotations/2.15.3/b81b39665962a39168ed4be3ebd4d00f21fd2ac8/jackson-annotations-2.15.3-sources.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/3030966/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-commons/3.1.5/227d0b2dd185458c58e89b2a4696d1b752536a72/spring-data-commons-3.1.5.jar" sourcepath="C:/Users/3030966/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-commons/3.1.5/9917915a7f551848d88c7c6ac75d7e00da22605c/spring-data-commons-3.1.5-sources.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/3030966/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.30/f195ee86e6c896ea47a1d39defbe20eb59cd149d/lombok-1.18.30.jar" sourcepath="C:/Users/3030966/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.30/f41b66af9925b6476e18c77d476f905710ee8488/lombok-1.18.30-sources.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/3030966/.gradle/caches/modules-2/files-2.1/org.springframework/spring-beans/6.0.13/5b205c9f2fb07c1367db144ce7ab305f94300604/spring-beans-6.0.13.jar" sourcepath="C:/Users/3030966/.gradle/caches/modules-2/files-2.1/org.springframework/spring-beans/6.0.13/1ad4ca909bbbb21b99524de49e6c2398e6f13afc/spring-beans-6.0.13-sources.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/3030966/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot/3.1.5/c188015a5a79f5df65e876dcfdef16148c45fe2c/spring-boot-3.1.5.jar" sourcepath="C:/Users/3030966/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot/3.1.5/56cb4e6e746384e13be1d991876fc0d6beceef2c/spring-boot-3.1.5-sources.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/3030966/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-autoconfigure/3.1.5/42a5b2ee98f700fba8d8c88d4af7b23266f1de0f/spring-boot-autoconfigure-3.1.5.jar" sourcepath="C:/Users/3030966/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-autoconfigure/3.1.5/9a0696b1101560509dd3fe14b41b246d8eb7789e/spring-boot-autoconfigure-3.1.5-sources.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/3030966/.gradle/caches/modules-2/files-2.1/jakarta.validation/jakarta.validation-api/3.0.2/92b6631659ba35ca09e44874d3eb936edfeee532/jakarta.validation-api-3.0.2.jar" sourcepath="C:/Users/3030966/.gradle/caches/modules-2/files-2.1/jakarta.validation/jakarta.validation-api/3.0.2/b1581d1ef516be94c473c0f4d97e59e394c70150/jakarta.validation-api-3.0.2-sources.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
