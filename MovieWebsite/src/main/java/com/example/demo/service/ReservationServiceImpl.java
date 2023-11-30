@@ -6,9 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.example.demo.entity.Movie;
+import com.example.demo.entity.ListOfMovie;
 import com.example.demo.entity.Reservation;
-import com.example.demo.repository.MovieRepository;
+import com.example.demo.repository.ListOfMovieRepository;
 import com.example.demo.repository.ReservationRepository;
 
 @Service
@@ -17,13 +17,13 @@ public class ReservationServiceImpl implements ReservationService{
 	@Autowired
 	ReservationRepository repository;
 	@Autowired
-	MovieRepository lomRepository;
+	ListOfMovieRepository lomRepository;
 //	@Autowired
 //	Account accountRepository;
 	Reservation reservation;
 	// 映画テーブルから映画タイトル全件取得
 	@Override
-	public Iterable<Movie> selectAll(){
+	public Iterable<ListOfMovie> selectAll(){
 		return lomRepository.findAll();
 	}
 	public Optional<Reservation> selectOneByReservationNumber(Integer reservationNumber){

@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.example.demo.entity.Movie;
+import com.example.demo.entity.ListOfMovie;
 import com.example.demo.entity.Reservation;
 import com.example.demo.form.ReservationForm;
 import com.example.demo.service.ReservationService;
@@ -36,7 +36,7 @@ public class ReservationController {
 	// entryファイルに返す
 	@GetMapping
 	public String entryView(ReservationForm reservationForm,Model model) {
-		Iterable<Movie> list = service.selectAll();
+		Iterable<ListOfMovie> list = service.selectAll();
 		model.addAttribute("list",list);
 		LocalDate today=LocalDate.now();
 		LocalDate maxDate=today.plusDays(30);
