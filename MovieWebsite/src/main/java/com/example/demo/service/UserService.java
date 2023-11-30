@@ -1,8 +1,10 @@
 package com.example.demo.service;
 
-import com.example.demo.entity.User;
+import java.util.Optional;
+
+import com.example.demo.entity.LoginUser;
 
 public interface UserService {
-    User getUserByUsername(String username);
-	void saveUser(User newUser);
+    Optional<LoginUser> getUserByUsername(String username);
+	void saveUser(LoginUser newUser);
 }

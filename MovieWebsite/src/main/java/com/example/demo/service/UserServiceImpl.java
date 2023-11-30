@@ -1,10 +1,12 @@
 package com.example.demo.service;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.entity.User;
+import com.example.demo.entity.LoginUser;
 import com.example.demo.repository.UserRepository;
 
 @Service
@@ -14,14 +16,15 @@ public class UserServiceImpl implements UserService {
     private UserRepository userRepository;
 
     @Override
-    public void saveUser(User user) {
+    public void saveUser(LoginUser user) {
         // パスワードはBCryptPasswordEncoder等を使用してハッシュ化する
         user.setPassword(new BCryptPasswordEncoder().encode(user.getPassword()));
         userRepository.save(user);
+        System.out.println("動いた");
     }
 
     @Override
-    public User getUserByUsername(String username) {
+    public Optional<LoginUser> getUserByUsername(String username) {
         return userRepository.findByUsername(username);
     }
 

@@ -4,12 +4,14 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 @Data
 @Entity
-public class User {
+@Table(name = "usr")
+public class LoginUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

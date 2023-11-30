@@ -10,7 +10,7 @@
 
 <body>
 	<h2>新規登録</h2>
-	<form action="/register" method="post">
+	<form th:action="@{/register}" method="POST">
 		<label for="username">Username:</label>
 		<input type="text" id="username" name="username" required>
 		<br>
@@ -21,6 +21,7 @@
 	</form>
 	<br>
 	<a th:href="@{/login}">ログイン</a>
+	<div th:if="${error}" class="error" th:text="${error}"></div>
 </body>
 
 </html>

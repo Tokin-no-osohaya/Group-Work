@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import java.util.Optional;
 import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.example.demo.entity.User;
+import com.example.demo.entity.LoginUser;
 import com.example.demo.service.UserService;
 
 
@@ -26,13 +27,12 @@ public class RegisterController {
 
  @PostMapping("/register")
  public String registerUser(@RequestParam String username, @RequestParam String password, Model model) {
-     User existingUser = userService.getUserByUsername(username);
-     if (existingUser != null) {
+     Optional<LoginUser> existingUser = userService.getUserByUsername(username);
+     if (existingUser.isPresent()) {
          model.addAttribute("error", "ユーザー名は既に存在します");
          return "register";
      }
-
-     User newUser = new User();
+     LoginUser newUser = new LoginUser();
      newUser.setUsername(username);
      newUser.setPassword(password);
      userService.saveUser(newUser);
@@ -41,7 +41,7 @@ public class RegisterController {
      String randomId = generateRandomId();
      model.addAttribute("randomId", randomId);
 
-     return "registration-success"; // registration-success.htmlを返す
+     return "register-success"; // registration-success.htmlを返す
  }
 
  private String generateRandomId() {
