@@ -10,7 +10,7 @@ import lombok.Data;
 @Data
 @Entity
 public class LoginUser {
-    @Id
+	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
@@ -20,8 +20,4 @@ public class LoginUser {
     @NotNull
     private String password;
 
-	public Integer getRoleId() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
 }

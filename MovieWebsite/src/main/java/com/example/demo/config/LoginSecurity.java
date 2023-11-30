@@ -18,17 +18,13 @@ public class LoginSecurity {
 		http
 				.formLogin(form -> form
 						//ログイン処理のパス
-						.loginProcessingUrl("/login")
+						.loginProcessingUrl("/authenticate")
 						//ログインページ
 						.loginPage("/login")
 						//ログインエラー時の遷移先
 						.failureUrl("/login?error")
 						//ログイン成功時の遷移先
 						.defaultSuccessUrl("/menu", true)
-						//ログイン時のキー：id
-						.usernameParameter("username")
-						//ログイン時のパスワード
-						.passwordParameter("password")
 						// ログイン画面は未ログインでもアクセス可能
 						.permitAll())
 				.logout(logout -> logout

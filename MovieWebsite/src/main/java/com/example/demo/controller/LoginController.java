@@ -12,8 +12,8 @@ public class LoginController {
         return "login"; // login.htmlを返す
     }
     @GetMapping(value="/login", params="error")
-	public String loginFail(Model model) {
-	model.addAttribute("errorMessage", "ログインに失敗しました");
+	public String loginError(Model model) {
+	model.addAttribute("failureMessage", "ログインに失敗しました");
 	// ログイン画面を表示
 	return "login";
 }

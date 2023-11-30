@@ -41,7 +41,7 @@ public class RegisterController {
      String randomId = generateRandomId();
      model.addAttribute("randomId", randomId);
 
-     return "register-success"; // registration-success.htmlを返す
+     return "register-success"; // register-success.htmlを返す
  }
 
  private String generateRandomId() {
