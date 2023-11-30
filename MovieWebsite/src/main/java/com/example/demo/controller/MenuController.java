@@ -8,6 +8,6 @@ public class MenuController {
 	//メニュー画面への遷移
 	@GetMapping("menu")
 	String index() {
-		return "menu";
+		return "menu";//menu.htmlを返す
 	}
 }

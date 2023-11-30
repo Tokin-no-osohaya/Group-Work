@@ -10,8 +10,13 @@ import lombok.Data;
 @AllArgsConstructor
 public class RoleId {
 	@Id
-	private Long id;
+	private Integer id;
 	
 	@NotNull
 	private String username;
+
+	public String getName() {
+		// TODO 自動生成されたメソッド・スタブ
+		return null;
+	}
 }

@@ -20,7 +20,6 @@ public class UserServiceImpl implements UserService {
         // パスワードはBCryptPasswordEncoder等を使用してハッシュ化する
         user.setPassword(new BCryptPasswordEncoder().encode(user.getPassword()));
         userRepository.save(user);
-        System.out.println("動いた");
     }
 
     @Override
