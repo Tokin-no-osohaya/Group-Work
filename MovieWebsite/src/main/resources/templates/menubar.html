@@ -5,7 +5,6 @@
 <title>menubar</title>
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 	<link rel="stylesheet" href="main.css">
-	<link rel="stylesheet" href="sanitize.css">
 	<link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
 </head>
@@ -14,11 +13,11 @@
 	<!-- フラグメントを定義-->
 		<nav class="grobal-nav">
 		<ul class="menu">
-			<li><a href=""><span th:fragment="home">ホーム</span></a></li>
-			<li><a href=""><span th:fragment="introduction">作品紹介</span></a></li>
-			<li><a href=""><span th:fragment="reservation">予約する</span></a></li>
-			<li><a href=""><span th:fragment="changeAndDelete">予約変更と削除</span></a></li>
-			<li><a href=""><span th:fragment="guide">劇場案内</span></a></li>
+			<li><span th:fragment="home"><a href="">ホーム</a></span></li>
+			<li><span th:fragment="introduction"><a href="">作品紹介</a></span></li>
+			<li><span th:fragment="reservation"><a href="">予約する</a></span></li>
+			<li><span th:fragment="changeAndDelete"><a href="">予約変更と削除</a></span></li>
+			<li><span th:fragment="guide"><a href="">劇場案内</a></span></li>
 		</ul>
 	</nav>
 	</div>
