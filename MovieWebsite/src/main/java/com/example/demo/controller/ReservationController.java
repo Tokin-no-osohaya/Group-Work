@@ -104,7 +104,6 @@ public class ReservationController {
 		try {
 			reservation.setReservationDate(new Date(f.parse(form.getReservationDate()).getTime()));
 		} catch (ParseException e) {
-			System.out.println("バカ");
 			// TODO 自動生成された catch ブロック
 			e.printStackTrace();
 		}
