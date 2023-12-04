@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
 	<name>Group-Work</name>
+<<<<<<< HEAD
 	<comment>Project Group-Work created by Buildship.</comment>
 	<projects>
 	</projects>
@@ -13,5 +14,25 @@
 	</buildSpec>
 	<natures>
 		<nature>org.eclipse.buildship.core.gradleprojectnature</nature>
+=======
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.wst.validation.validationbuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+>>>>>>> branch 'master' of https://github.com/Tokin-no-osohaya/Group-Work.git
 	</natures>
 </projectDescription>
