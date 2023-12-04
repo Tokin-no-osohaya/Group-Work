@@ -1,14 +1,20 @@
 @charset "UTF-8";
 @font-face {
 	font-family:'キー';
-	src: local('Key-Regular.otf');
-	font-family:'マキナス';
-	src: local('Makinas-4-Square.otf');
-	font-family:'NotoSans';
-	src: local('NotoSansJP-Light.ttf');
+	src: url('../fonts/Key-Regular.otf');
 }
 
-*{
+@font-face {
+	font-family:'マキナス';
+	src: url('../fonts/Makinas-4-Square.otf');
+}
+
+@font-face {
+	font-family:'NotoSans';
+	src: url('../fonts/NotoSansJP-Light.ttf');
+}
+
+* {
 	margin:0;
 	padding:0;
 }
@@ -16,6 +22,7 @@
 html {
 	background-color:#000000; /* 周囲の背景色 */
 	padding:0;
+	margin:0;
 }
 
 body {
@@ -49,11 +56,17 @@ article{
 	line-height: 1.5;
 	word-break: break-all;
 }
+article.heading{
+	margin:0;
+	padding:0;
+	font-family:'NotoSans';
+	font-weight: bold;
+}
 
 h1{
-	color: #ec541c;;
+	color: #ec541c;
 	font-family:'キー','游ゴシック','メイリオ','ヒラギノ角ゴシック','Arial',sans-serif;
-	font-size: 70px;
+	font-size: 45px;
 	font-weight:normal;
 	letter-spacing:normal;
 	line-height: 1.5;
@@ -62,10 +75,8 @@ h1{
 
 h2,h3,h4,h5,h6 {
 	font-family:'マキナス','游ゴシック','メイリオ','ヒラギノ角ゴシック','Arial',sans-serif;
-}
-
-.pickup{
 	text-decoration:underline;
+	
 }
 
 nav{
@@ -99,13 +110,15 @@ nav{
 }
 
 p {
- 	margin: 2em 0;
+	text-indent: 1em;
+ 	margin: 0;
+ 	padding: 0;
  	font-size: 15px;
 }
 
 header{
 	padding:10px;
-	height:200px;
+	height:150px;
 	width:100%;
 	display:flex;
 	justify-content: space-between;
@@ -115,20 +128,18 @@ header{
 	letter-spacing:normal;
 	line-height: 1.5;
 	word-break: break-all;
-	text-align: justify;
 }
 
 .title{
 	margin:5px;
 	display: flex;
-	line-height: 100px;
-	justify-content: space-between;
-	text-align: center;
+	line-height: 70px;
+	text-align: justify;
+	vertical-align: text-bottom;
 }
 
 .account{
-	line-height: 150px;
-	text-align: center;
+	
 }
 
 header.fixed{
@@ -164,6 +175,23 @@ footer{
 ol,ul {
 	list-style: none;
 }
+
+/***トップへ戻るボタン***/
+fotter.page-top {
+    display: block;
+    font-weight: bold;
+    padding: .7em;
+    text-align: center;
+    background: #fff; /*背景色*/
+    color: #666; /*文字色*/
+    transition: .3s;
+}
+/***マウスオーバー時***/
+fotter.page-top:hover {
+    background: #666; /*背景色*/
+    color: #fff; /*文字色*/
+}
+/***トップへ戻るボタンここまで***/
 
 small{
 	color:#fff;

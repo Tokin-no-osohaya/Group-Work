@@ -7,7 +7,6 @@
 	<title>キャルシネマ -上映作品一覧</title>
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 	<link rel="stylesheet" href="main.css">
-	<link rel="stylesheet" href="sanitize.css">
 	<link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
 </head>
@@ -20,53 +19,14 @@
 					<article class="information">
 						<h3>上映作品</h3>
 							<article class="movie-view">
-								<img src="">
-								<h5>[[${movie_title}]]</h5>
+								<div th:each="movie : ${movies}">
+								<img src=""> <!-- 画像のリンクをSQLに入れておく-->
+								<h5>[[${movie.movieTitle}]]</h5>
 								<p><a href="">作品情報／予約</a></p>
-								<br/><br/>
+								<br/>
+								</div>
 							</article>
-							
-							<article class="movie-view">
-								<img src="">
-								<h5>[[${movie_title}]]</h5>
-								<p><a href="">作品情報／予約</a></p>
-								<br/><br/>
-							</article>
-							
-							<article class="movie-view">
-								<img src="">
-								<h5>[[${movie_title}]]</h5>
-								<p><a href="">作品情報／予約</a></p>
-								<br/><br/>
-							</article>
-							
-							<article class="movie-view">
-								<img src="">
-								<h5>[[${movie_title}]]</h5>
-								<p><a href="">作品情報／予約</a></p>
-								<br/><br/>
-							</article>
-							
-							<article class="movie-view">
-								<img src="">
-								<h5>[[${movie_title}]]</h5>
-								<p><a href="">作品情報／予約</a></p>
-								<br/><br/>
-							</article>
-							
-							<article class="movie-view">
-								<img src="">
-								<h5>[[${movie_title}]]</h5>
-								<p><a href="">作品情報／予約</a></p>
-								<br/><br/>
-							</article>
-							
-							<article class="movie-view">
-								<img src="">
-								<h5>[[${movie_title}]]</h5>
-								<p><a href="">作品情報／予約</a></p>
-								<br/><br/>
-							</article>
+
 					</article>
 	<!-- 置き換わる内容ここまで -->
 		</div>

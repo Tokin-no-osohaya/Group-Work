@@ -7,7 +7,6 @@
 	<title>キャルシネマ</title>
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 	<link rel="stylesheet" href="main.css">
-	<link rel="stylesheet" href="sanitize.css">
 	<link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
 </head>
@@ -23,28 +22,32 @@
 					<article class="information">
 						<h3>お知らせ</h3>
 							<article class="information-tips">
-								<h5>11月13日　新作公開</h5>
-								詳しい情報は こちら へ
+								<article class="heading">11月13日　新作公開</article>
+								<p>詳しい情報は<a href="">こちら</a></p>
 							</article>
+							
 							<article class="information-tips">
-								<h5>11月01日　システムメンテナンスのお知らせ</h5>
+								<article class="heading">11月01日　システムメンテナンスのお知らせ</article>
+								<p>詳しい情報は<a href="">こちら</a></p>
 							</article>
+							
 							<article class="information-tips">
-								<h5>10月20日　ご来場にあたってのお願い</h5>
+								<article class="heading">10月20日　ご来場にあたってのお願い</article>
+								<p>詳しい情報は<a href="">こちら</a></p>
 							</article>
 					</article>
-					<br/>
 					
 		<!-- ピックアップ -->
-		<div>
-			<h3 class="pickup">ピックアップ</h3>
-			<img src="">
-			<h5>[[${movie_title}]]</h5>
-				<p>[[${summery}]]</p>
-				<br/><br/>
+		<div class="pickup">
+			<h3>ピックアップ</h3>
+			<img src="" hright="200" width="200">
+			<h5>[[${movie.movieTitle}]]</h5>
+				<p>[[${movie.summary}]]</p>
 		</div>
+		
 	<!-- 置き換わる内容ここまで -->
 		</div>
+		
 	</div>
 </body>
 </html>

@@ -1,12 +1,20 @@
 package com.example.demo.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.example.demo.entity.Movie;
+import com.example.demo.service.MovieService;
+
 @Controller
 public class WelcomeController {
+	@Autowired
+	MovieService movieService;
+	
 	//スプラッシュスクリーンを表示する
 	@GetMapping("first")
 	public String showSplash() {
@@ -20,10 +28,10 @@ public class WelcomeController {
 		return "index";
 	}
 	
-	//一覧画面を表示する
-	@GetMapping("view")
-	public String showall() {
-		//戻り値は「ビュー名」を返す
+	@GetMapping("/view")
+	public String showAll(Model model) {
+		Iterable<Movie> movies = movieService.selectAll();
+		model.addAttribute("movies",movies);
 		return "all";
 	}
 
