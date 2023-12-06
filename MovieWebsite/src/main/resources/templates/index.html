@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<title>キャルシネマ</title>
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
-	<link rel="stylesheet" href="main.css">
+	<link rel="stylesheet" href="../main.css">
 </head>
 <body>
 
@@ -15,7 +15,10 @@
 
 		<!-- 置き換わる内容 -->
 		<div layout:fragment="content">	
-			
+
+		<!-- ヘッダー画像 -->
+		<img src="../img/header.png" class="header-img">
+		
 		<!-- お知らせ -->
 					<article class="information">
 						<h3>お知らせ</h3>
@@ -38,7 +41,7 @@
 		<!-- ピックアップ -->
 		<div class="pickup">
 			<h3>ピックアップ</h3>
-			<img src="" hright="200" width="200">
+			<img th:src="'../'+${movie.movieImg}" width="200" hight="200">
 			<h5>[[${movie.movieTitle}]]</h5>
 				<p>[[${movie.summary}]]</p>
 		</div>

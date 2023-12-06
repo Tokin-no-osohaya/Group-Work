@@ -1,13 +1,12 @@
 package com.example.demo.controller;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+//不要になった？
 
-@Controller
+/*@Controller
 public class MenuController {
 	//メニュー画面への遷移
 	@GetMapping("menu")
 	String index() {
 		return "menu";//menu.htmlを返す
 	}
-}
+}*/

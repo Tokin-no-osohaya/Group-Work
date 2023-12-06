@@ -3,9 +3,9 @@
 		xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="main.css">
 <title>ベース：レイアウト</title>
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-	<link rel="stylesheet" href="main.css">
 
 </head>
 <body>
@@ -13,21 +13,20 @@
 	<!-- 共通ヘッダー -->
 <header>
 	<div class="title">
-		<img src="../img/header.png">
 		<h1>キャルシネマ</h1>
-			<h5>[[${name}]]さん、こんにちは！</h5>
+			<h5>[[${username}]]さん、こんにちは！</h5>
 	</div>
 </header>
 
 	<!-- メニューバー -->
-	<div id="one" th:insert="menubar :: home"></div>
-	<div id="two" th:insert="menubar :: introduction"></div>
-	<div id="three" th:insert="menubar :: reservation"></div>
-	<div id="four" th:insert="menubar :: changeAndDelete"></div>
-	<div id="five" th:insert="menubar :: guide"></div>
+	<div id="one" th:insert="~{menubar :: home}"></div>
+	<div id="two" th:insert="~{menubar :: introduction}"></div>
+	<div id="three" th:insert="~{menubar :: reservation}"></div>
+	<div id="four" th:insert="~{menubar :: changeAndDelete}"></div>
+	<div id="five" th:insert="~{menubar :: guide}"></div>
 	
 	<!-- 置き換え場所 -->
-	<div layout:fragment="content" align="left">置き換える</div>
+	<div layout:fragment="content">置き換える</div>
 	
 	<!-- 共通フッター -->
 <footer>

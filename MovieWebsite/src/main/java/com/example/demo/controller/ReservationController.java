@@ -40,7 +40,7 @@ public class ReservationController {
 	//		return new ReservationForm();
 	//	}
 
-	// entryファイルに返す
+	//予約ページにリンクする
 	@GetMapping
 	public String entryView(Model model) {
 		Iterable<Movie> list = service.selectAll();
@@ -51,6 +51,7 @@ public class ReservationController {
 		model.addAttribute("maxDate",maxDate);
 		return "entry";
 	}
+	
 	// confirmファイルに返す
 	@PostMapping("confirm")
 	public String confirmView(@Validated ReservationForm reservationForm,BindingResult bindingResult,Model model,RedirectAttributes redirectAttributes) {
@@ -91,6 +92,7 @@ public class ReservationController {
 
 		return "confirmComp";
 	}
+	
 	//EntityからFormへ詰め直し
 	private ReservationForm remakeForm(Reservation reservation) {
 		ReservationForm form=new ReservationForm();
