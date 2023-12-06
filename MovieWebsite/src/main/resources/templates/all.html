@@ -20,7 +20,7 @@
 						<h3>上映作品</h3>
 							<article class="movie-view">
 								<div th:each="movie : ${movies}">
-								<img th:src="[[${movie.img}]]">
+								<img th:src="[[${movie.movieImg}]]">
 								<h5>[[${movie.movieTitle}]]</h5>
 								<button class="movie-introduction"><a th:href="function/${movie.id}">作品情報</a></button>
 								<br/>

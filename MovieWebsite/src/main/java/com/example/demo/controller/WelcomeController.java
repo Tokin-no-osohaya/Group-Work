@@ -5,7 +5,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 
 import com.example.demo.entity.Movie;
 import com.example.demo.service.MovieService;
@@ -23,37 +22,31 @@ public class WelcomeController {
 	}
 	
 	//トップ画面を表示する
-	@GetMapping("show")
-	public String showView() {
+	@GetMapping("show/{username}")
+	public String showView(@PathVariable String username,Model model) {
+		model.addAttribute("movie",movieService.selectOneById(6).get());
+		model.addAttribute("username",username);
 		//戻り値は「ビュー名」を返す
 		return "index";
 	}
 	
 	//一覧画面を表示する
-	@GetMapping("view")
-	public String showAll(Model model) {
+	@GetMapping("view/{username}")
+	public String showAll(@PathVariable String username,Model model) {
 		Iterable<Movie> movies = movieService.selectAll();
 		model.addAttribute("movies",movies);
+		model.addAttribute("username",username);
 		return "all";
 	}
 
 	//リンク画面
-	@GetMapping("function/{no}")
-	public String selectFunction(@PathVariable Integer no,Model model) {
+	@GetMapping("function/{username}/{no}")
+	public String selectFunction(@PathVariable String username,@PathVariable Integer no,Model model) {
 		//「ビュー名」の初期化
 		model.addAttribute("movie",movieService.selectOneById(no).get());
+		model.addAttribute("username",username);
 		//戻り値は「ビュー名」を返す
 		return "introduction";
 	}
 	
-	//単体ページ
-	@GetMapping("")
-	
-
-//ボタン「予約」押下処理
-@PostMapping(value="send",params="a")
-	public String showAView() {
-		//戻り値は「ビュー名」を返す
-		return "submit/a";
-	}
 }

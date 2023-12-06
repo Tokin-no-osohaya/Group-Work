@@ -21,7 +21,7 @@ public class ServiceImpl implements MovieService {
 	
 	@Override
 	public Optional<Movie> selectOneById(Integer id) {
-		return movieRepository.findById(id);
+		return movieRepository.findById(id.toString());
 	}
 
 }
