@@ -7,29 +7,30 @@
 	<title>キャルシネマ -上映作品一覧</title>
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 	<link rel="stylesheet" href="main.css">
-	<link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
 </head>
 <body>
 	<!-- Mainセクション -->
 	<div class="container">
+		
 		<!-- 置き換わる内容 -->
-		<div layout:fragment="content">	
+		<div layout:fragment="content">
+				
 		<!-- 作品一覧 -->
 					<article class="information">
 						<h3>上映作品</h3>
 							<article class="movie-view">
 								<div th:each="movie : ${movies}">
-								<img src=""> <!-- 画像のリンクをSQLに入れておく-->
+								<img th:src="[[${movie.img}]]">
 								<h5>[[${movie.movieTitle}]]</h5>
-								<p><a href="">作品情報／予約</a></p>
+								<button class="movie-introduction"><a th:href="function/${movie.id}">作品情報</a></button>
 								<br/>
 								</div>
 							</article>
 
 					</article>
-	<!-- 置き換わる内容ここまで -->
 		</div>
+	<!-- 置き換わる内容ここまで -->
+	
 	</div>
 </body>
 </html>

@@ -11,6 +11,7 @@ import com.example.demo.entity.Movie;
 import com.example.demo.service.MovieService;
 
 @Controller
+//@RequsetMapping(/"welcome")
 public class WelcomeController {
 	@Autowired
 	MovieService movieService;
@@ -28,41 +29,26 @@ public class WelcomeController {
 		return "index";
 	}
 	
-	@GetMapping("/view")
+	//一覧画面を表示する
+	@GetMapping("view")
 	public String showAll(Model model) {
 		Iterable<Movie> movies = movieService.selectAll();
 		model.addAttribute("movies",movies);
 		return "all";
 	}
 
-//リンク処理
-@GetMapping("/function/{no}")
-public String selectFunction(@PathVariable Integer no) {
-	//「ビュー名」の初期化
-	String show = null;
-	switch(no) {
-	case 1:
-		show = "welcome/function1";
-		break;
-	case 2:
-		show = "welcome/function2";
-		break;
-	case 3:
-		show = "welcome/function3";
-		break;
-	case 4:
-		show = "welcome/function4";
-		break;
-	case 5:
-		show = "welcome/function5";
-		break;
-	case 6:
-		show = "welcome/function6";
-		break;
+	//リンク画面
+	@GetMapping("function/{no}")
+	public String selectFunction(@PathVariable Integer no,Model model) {
+		//「ビュー名」の初期化
+		model.addAttribute("movie",movieService.selectOneById(no).get());
+		//戻り値は「ビュー名」を返す
+		return "introduction";
 	}
-	//戻り値は「ビュー名」を返す
-	return show;
-	}
+	
+	//単体ページ
+	@GetMapping("")
+	
 
 //ボタン「予約」押下処理
 @PostMapping(value="send",params="a")
