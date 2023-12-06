@@ -7,26 +7,29 @@
 	<title>キャルシネマ - 作品紹介</title>
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 	<link rel="stylesheet" href="main.css">
-	<link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
 </head>
 <body>
 	<!-- Mainセクション -->
 	<div class="container">
+		
 		<!-- 置き換わる内容 -->
-		<div layout:fragment="content">	
+		<div layout:fragment="content">
+			
 		<!-- 作品一覧 -->
 					<article class="information">
 						<h3>上映作品</h3>
 							<article class="movie-view">
-								<img src="">
+								<img th:src="[[${movie.img}]]">
 								<h5>[[${movie.movie_title}]]</h5>
+								<button class="movie-introduction"><a th:href="">予約する</a></button>
+								<h5>あらすじ</h5>
 								<p>[[${movie.summary}]]</p>
 								<br/><br/>
 							</article>
 					</article>
 	<!-- 置き換わる内容ここまで -->
 		</div>
+		
 	</div>
 </body>
 </html>

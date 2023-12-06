@@ -22,4 +22,6 @@ public class Movie {
 	private String kind;
 	//あらすじに対応
 	private String summary;
+	//画像に対応
+	private String img;
 }
