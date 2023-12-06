@@ -17,10 +17,13 @@
 * {
 	margin:0;
 	padding:0;
+	background-image: '../img/background.jpg';
 }
 
 html {
-	background-color:#000000; /* 周囲の背景色 */
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: center;
 	padding:0;
 	margin:0;
 }
@@ -29,14 +32,14 @@ body {
 	padding: 0;
 	margin-top: 0px;
 	margin-bottom: 0px;
-	margin-right: 100px;
-	margin-left: 100px;
+	margin-right: 15%;
+	margin-left: 15%;
 	background-color: #FFFFFF;	
 }
 
 .container{
 	height: 100%;
-	width: 80%;/*中央の幅の指定*/
+	/*width: 80%;中央の幅の指定*/
 	margin: 0 auto;
 	background: #FFFFFF;
 	color:#000000;
@@ -49,12 +52,22 @@ body {
 }
 
 article{
+	width:80%;
+	margin:0 auto;
 	color:#000000;
 	font-family:'NotoSans','游ゴシック','メイリオ','ヒラギノ角ゴシック','Arial',sans-serif;
 	font-weight: normal;
 	letter-spacing:normal;
 	line-height: 1.5;
 	word-break: break-all;
+}
+
+article.information{
+	padding-top: 0px;
+	padding-right:0;
+	padding:0;
+	padding-bottom:30px;
+	margin-top:50px;
 }
 
 article.heading{
@@ -67,7 +80,7 @@ article.heading{
 h1{
 	color: #ec541c;
 	font-family:'キー','游ゴシック','メイリオ','ヒラギノ角ゴシック','Arial',sans-serif;
-	font-size: 45px;
+	font-size: 40px;
 	font-weight:normal;
 	letter-spacing:normal;
 	line-height: 1.5;
@@ -104,9 +117,9 @@ nav{
 }
 
 @media (min-width: 640px) {
- 	.menu li {
-		display: inline-block;  /* 横に並べる */
- 	}
+	.menu li {
+		display: inline-block;	/* 横に並べる */
+	}
 }
 
 p {
@@ -118,12 +131,13 @@ p {
 
 header{
 	padding:10px;
-	height:150px;
+	height:100px;
 	width:100%;
 	display:flex;
+	position: relative;
 	justify-content: space-between;
 	background-color: #FFFFFF;
-	font-family:'NotoSans','游ゴシック','メイリオ','ヒラギノ角ゴシック','Arial',sans-serif;
+	font-family:'NotoSans','游ゴシック','メイリオ','ヒラギノ角ゴシック','qArial',sans-serif;
 	font-weight:normal;
 	letter-spacing:normal;
 	line-height: 1.5;
@@ -134,7 +148,7 @@ header{
 	margin:5px;
 	display: flex;
 	line-height: 70px;
-	text-align: justify;
+	text-align: justify !important;
 	vertical-align: text-bottom;
 }
 
@@ -151,6 +165,8 @@ header.fixed{
 
 footer{
 	width: 100%;
+	margin-top:50px;
+	padding-top:20px;
 	background-color: #999999;
 	font-family:'NotoSans','游ゴシック','メイリオ','ヒラギノ角ゴシック','Arial',sans-serif;
 	text-align: center;
@@ -234,6 +250,14 @@ img {
 	max-width: 100%;
 }
 
+.header-img{
+	width:100vw;
+	height: 300px;
+	margin:0;
+	padding:0;
+	text-align: center;
+}
+
 a{
 	color: #FFFFFF;
 	text-decoration:none;
@@ -244,3 +268,4 @@ a:hover{
 	color:#666666;
 	text-decoration: none;
 }
+
