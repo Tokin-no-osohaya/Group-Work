@@ -46,7 +46,7 @@ public class ReservationController {
 	}
 	// confirmファイルに返す
 	@PostMapping("confirm")
-	public String confirmView(@Validated ReservationForm reservationForm,Model model,BindingResult bindingResult,RedirectAttributes redirectAttributes) {
+	public String confirmView(@Validated ReservationForm reservationForm,BindingResult bindingResult,Model model,RedirectAttributes redirectAttributes) {
 		if(bindingResult.hasErrors()) {
 			return "entry";
 		}

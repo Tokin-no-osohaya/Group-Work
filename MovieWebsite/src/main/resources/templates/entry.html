@@ -15,8 +15,9 @@
 			<option th:each="m : ${list}" name="movieTitle"th;field="*{movieTitle}">[[${m.movieTitle}]]</option>
 		</select>
 		</div>
-		<div th:if="${#fields.hasErrors('movieTitle')}">
-			
+		<ul th:if="${#fields.hasErrors()}">
+			<li th:each="err:${fields.errors('*')}" th:text="${err}"></li>
+		</ul>
 		</div>
 		<!-- 人数 -->
 		<div align="center">

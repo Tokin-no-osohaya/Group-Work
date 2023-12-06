@@ -1,9 +1,9 @@
 package com.example.demo.repository;
 
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.example.demo.entity.Reservation;
 
-public interface ReservationRepository extends CrudRepository<Reservation,Integer>{
+public interface ReservationRepository extends JpaRepository<Reservation,Integer>{
 
 }

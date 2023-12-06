@@ -3,14 +3,15 @@ package com.example.demo.entity;
 import java.sql.Date;
 import java.time.LocalDateTime;
 
-import org.springframework.data.annotation.Id;
-
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 // 予約テーブル用
 @Data
+@Entity
 @NoArgsConstructor
 @AllArgsConstructor
 public class Reservation {
