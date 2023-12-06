@@ -4,6 +4,8 @@ import java.sql.Date;
 import java.time.LocalDateTime;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,6 +21,7 @@ public class Reservation {
 	private Integer id;
 	//予約番号
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer reservationNumber;
 	//予約した日付（時間）
 	private LocalDateTime managementTime;
