@@ -7,33 +7,35 @@
 </head>
 <body>
 	<form th:action="@{/reservation/confirm}"method="post"th:object="${reservationForm}">
-		<!-- 作品名 -->
-		<div align="center">
+		<div>
 		<label for="movieTitle">作品名</label>
-		<select size="1" name="movieTitle">作品名:
-			<option disabled selected value>選択してください。</option>
-			<option th:each="m : ${list}" name="movieTitle"th;field="*{movieTitle}">[[${m.movieTitle}]]</option>
+		<select size="1" name="movieTitle" th:field="*{movieTitle}">作品名:
+			<option value="" th:disabled="true" th:selected="true">選択してください。</option>
+			<option th:each="m : ${list}" name="movieTitle" th:value="${m.movieTitle}" th:text="${m.movieTitle}" >[[${m.movieTitle}]]</option>
 		</select>
 		</div>
-		<ul th:if="${#fields.hasErrors()}">
-			<li th:each="err:${fields.errors('*')}" th:text="${err}"></li>
+		
+		<ul th:if="${#fields.hasErrors('movieTitle')}">
+			<li th:errors="*{movieTitle}" style="color:crimson"></li>
 		</ul>
 		</div>
 		<!-- 人数 -->
-		<div align="center">
+		<div>
 			<label for="numberOfPeople">人数:</label>
 			<input type="number" name="numberOfPeople" th:field="*{numberOfPeople}"min="1">人
-<!--			<ul th:if="${#fields.hasErrors(*)}">
-				<li th:each="err:${#fields.errors(*)}"th:text="${err}"></li>
-			</ul>-->
+			<ul th:if="${#fields.hasErrors('numberOfPeople')}">
+				<li th:errors="*{numberOfPeople}" style="color:crimson"></li>
+			</ul>
 		</div>	
 		<!-- 予約希望日時(今日～30日) -->
-		<div align="center">
+		<div>
 			<label for="reservationDate">希望日時:</label>
-			<input type="date" name="reservationDate"th:field="*{reservationDate}" min="${today}" max="${maxDate}">
+			<input type="date" name="reservationDate"th:field="*{reservationDate}" min="${today}" max="${today.plusDays(30)}">
+			<ul th:if="${#fields.hasErrors('reservationDate')}">
+				<li th:errors="*{reservationDate}" style="color:crimson"></li>
 		</div>
 		<!-- 予約ボタン -->
-		<div align="center">
+		<div>
 			<input type="submit" value="予約する">
 		</div>
 			

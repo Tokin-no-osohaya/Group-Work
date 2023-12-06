@@ -1,7 +1,5 @@
 package com.example.demo.controller;
 
-import java.sql.Date;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -11,8 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -26,6 +26,13 @@ import com.example.demo.service.ReservationService;
 public class ReservationController {
 	@Autowired
 	ReservationService service;
+	
+	@ModelAttribute
+	public ReservationForm add() {
+		ReservationForm form = new ReservationForm();
+		form.setMovieTitle("");
+		return form;
+	}
 
 	SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd"); 
 	//	@ModelAttribute
@@ -35,7 +42,7 @@ public class ReservationController {
 
 	// entryファイルに返す
 	@GetMapping
-	public String entryView(ReservationForm reservationForm,Model model) {
+	public String entryView(Model model) {
 		Iterable<Movie> list = service.selectAll();
 		model.addAttribute("list",list);
 		LocalDate today=LocalDate.now();
@@ -47,7 +54,13 @@ public class ReservationController {
 	// confirmファイルに返す
 	@PostMapping("confirm")
 	public String confirmView(@Validated ReservationForm reservationForm,BindingResult bindingResult,Model model,RedirectAttributes redirectAttributes) {
+		if(reservationForm.getReservationDate()!=null&&reservationForm.getReservationDate().isAfter(LocalDate.now().plusDays(30))) {
+			 FieldError fieldError = new FieldError("reservationForm", "reservationDate", "予約日は30日後までです。");
+	           bindingResult.addError(fieldError);
+		}
 		if(bindingResult.hasErrors()) {
+			Iterable<Movie> list = service.selectAll();
+			model.addAttribute("list",list);
 			return "entry";
 		}
 		//		System.out.println(reservationForm);
@@ -85,7 +98,7 @@ public class ReservationController {
 		form.setMovieTitle(reservation.getMovieTitle());
 		form.setNumberOfPeople(reservation.getNumberOfPeople());
 		form.setNow(reservation.getManagementTime());
-		form.setReservationDate(f.format(reservation.getReservationDate()));
+//		form.setReservationDate(f.format(reservation.getReservationDate()));
 		form.setTotalPrice(reservation.getTotalPrice());
 		form.setReservationNumber(reservation.getReservationNumber());
 		return form;	
@@ -101,12 +114,12 @@ public class ReservationController {
 		reservation.setReservationNumber(form.getReservationNumber());
 		reservation.setTotalPrice(form.getTotalPrice());
 		//		↓変更に伴ってtry-catchが増えています。
-		try {
-			reservation.setReservationDate(new Date(f.parse(form.getReservationDate()).getTime()));
-		} catch (ParseException e) {
-			// TODO 自動生成された catch ブロック
-			e.printStackTrace();
-		}
+//		try {
+//			reservation.setReservationDate(new Date(f.parse(form.getReservationDate()).getTime()));
+//		} catch (ParseException e) {
+//			// TODO 自動生成された catch ブロック
+//			e.printStackTrace();
+//		}
 		return reservation;
 	}
 
