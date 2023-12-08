@@ -17,7 +17,7 @@
 		<div layout:fragment="content">	
 
 		<!-- ヘッダー画像 -->
-		<img src="../img/header.png" class="header-img">
+		<!--img src="../img/header.png" class="header-img" -->
 		
 		<!-- お知らせ -->
 					<article class="information">
@@ -39,12 +39,12 @@
 					</article>
 					
 		<!-- ピックアップ -->
-		<div class="pickup">
-			<h3>ピックアップ</h3>
-			<img th:src="'../'+${movie.movieImg}" width="200" hight="200">
-			<h5>[[${movie.movieTitle}]]</h5>
-				<p>[[${movie.summary}]]</p>
-		</div>
+					<article class="pickup">
+						<h3>ピックアップ</h3>
+						<img th:src="'../'+${movie.movieImg}" width="200" hight="200">
+						<h3>[[${movie.movieTitle}]]</h3>
+						<p>[[${movie.summary}]]</p>
+					</article>
 		
 	<!-- 置き換わる内容ここまで -->
 		</div>

@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<title>キャルシネマ -上映作品一覧</title>
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
-	<link rel="stylesheet" href="main.css">
+	<link rel="stylesheet" href="../main.css">
 </head>
 <body>
 	<!-- Mainセクション -->
@@ -20,10 +20,10 @@
 						<h3>上映作品</h3>
 							<article class="movie-view">
 								<div th:each="movie : ${movies}">
-								<img th:src="[[${movie.movieImg}]]">
+								<img th:src="|../${movie.movieImg}|" width="200" hight="200">
 								<h5>[[${movie.movieTitle}]]</h5>
-								<button class="movie-introduction"><a th:href="function/${movie.id}">作品情報</a></button>
-								<br/>
+								<button class="movie-introduction"><a th:href="|function/${username}/${movie.id}|">作品情報</a></button>
+								<br/><br/><br/>
 								</div>
 							</article>
 

@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<title>キャルシネマ - 作品紹介</title>
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
-	<link rel="stylesheet" href="main.css">
+	<link rel="stylesheet" href="/main.css">
 </head>
 <body>
 	<!-- Mainセクション -->
@@ -17,15 +17,17 @@
 			
 		<!-- 作品一覧 -->
 					<article class="information">
+					<br/><br/>
 						<h3>上映作品</h3>
-							<article class="movie-view">
-								<img th:src="[[${movie.img}]]">
-								<h5>[[${movie.movie_title}]]</h5>
-								<button class="movie-introduction"><a th:href="reservation">予約する</a></button>
-								<h5>あらすじ</h5>
-								<p>[[${movie.summary}]]</p>
+							<!--article class="movie-view"-->
+								<img th:src="|/${movie.movieImg}|" width="200" hight="200">
+								<h3>[[${movie.movieTitle}]]</h3>
 								<br/><br/>
-							</article>
+								<h5>あらすじ</h5>
+								<p>[[${movie.summary}]]</p><br/>
+								<div align="right"><button class="movie-introduction"><a th:href="reservation">予約する</a></button></div>
+								<br/><br/>
+							<!--/article-->
 					</article>
 	<!-- 置き換わる内容ここまで -->
 		</div>

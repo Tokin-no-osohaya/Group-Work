@@ -40,7 +40,7 @@ public class WelcomeController {
 	}
 
 	//リンク画面
-	@GetMapping("function/{username}/{no}")
+	@GetMapping("view/function/{username}/{no}")
 	public String selectFunction(@PathVariable String username,@PathVariable Integer no,Model model) {
 		//「ビュー名」の初期化
 		model.addAttribute("movie",movieService.selectOneById(no).get());
