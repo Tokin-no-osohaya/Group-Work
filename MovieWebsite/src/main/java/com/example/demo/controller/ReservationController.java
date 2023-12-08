@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.example.demo.entity.LoginUser;
 import com.example.demo.entity.Movie;
 import com.example.demo.entity.Reservation;
 import com.example.demo.form.ReservationForm;
@@ -55,6 +57,7 @@ public class ReservationController {
 	// confirmファイルに返す
 	@PostMapping("confirm")
 	public String confirmView(@Validated ReservationForm reservationForm,BindingResult bindingResult,Model model,RedirectAttributes redirectAttributes) {
+		// 30日後以降を選択するとエラーになる
 		if(reservationForm.getReservationDate()!=null&&reservationForm.getReservationDate().isAfter(LocalDate.now().plusDays(30))) {
 			 FieldError fieldError = new FieldError("reservationForm", "reservationDate", "予約日は30日後までです。");
 	           bindingResult.addError(fieldError);
@@ -64,16 +67,13 @@ public class ReservationController {
 			model.addAttribute("list",list);
 			return "entry";
 		}
-		//		System.out.println(reservationForm);
 		reservationForm.setTotalPrice(reservationForm.getNumberOfPeople()*1800);
-		//		model.addAttribute("totalPrice",reservationForm.getTotalPrice());
 		return "confirm";
 	}
 
 	// confirmCompファイルに返す
 	@PostMapping("confirmComp")
 	public String confirmCompView(ReservationForm reservationForm,Model model) {
-		//		System.out.println(reservationForm);
 		Reservation reservation = remakeEntity(reservationForm);
 		service.insert(reservation);//DB登録
 				Optional<Reservation>reservationOpt = service.selectOneByReservationNumber(reservation.getReservationNumber());
@@ -88,7 +88,6 @@ public class ReservationController {
 				String managementTime = fmt.format(form.getNow());
 				model.addAttribute("managementTime",managementTime);
 				reservation.setTotalPrice(reservation.getTotalPrice());
-//				reservation.setManagementTime(reservation.getManagementTime());
 
 		return "confirmComp";
 	}
@@ -100,7 +99,7 @@ public class ReservationController {
 		form.setMovieTitle(reservation.getMovieTitle());
 		form.setNumberOfPeople(reservation.getNumberOfPeople());
 		form.setNow(reservation.getManagementTime());
-//		form.setReservationDate(f.format(reservation.getReservationDate()));
+		form.setReservationDate(reservation.getReservationDate().toLocalDate());
 		form.setTotalPrice(reservation.getTotalPrice());
 		form.setReservationNumber(reservation.getReservationNumber());
 		return form;	
@@ -109,19 +108,14 @@ public class ReservationController {
 
 	public Reservation remakeEntity(ReservationForm form) {
 		Reservation reservation = new Reservation();
-		reservation.setId(form.getId());
+		LoginUser loginUser = new LoginUser();
+		reservation.setId(loginUser.getId());
 		reservation.setMovieTitle(form.getMovieTitle());
 		reservation.setNumberOfPeople(form.getNumberOfPeople());
 		reservation.setManagementTime(form.getNow());
 		reservation.setReservationNumber(form.getReservationNumber());
 		reservation.setTotalPrice(form.getTotalPrice());
-		//		↓変更に伴ってtry-catchが増えています。
-//		try {
-//			reservation.setReservationDate(new Date(f.parse(form.getReservationDate()).getTime()));
-//		} catch (ParseException e) {
-//			// TODO 自動生成された catch ブロック
-//			e.printStackTrace();
-//		}
+		reservation.setReservationDate(Date.valueOf(form.getReservationDate()));
 		return reservation;
 	}
 
