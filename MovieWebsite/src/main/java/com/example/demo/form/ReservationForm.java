@@ -23,7 +23,7 @@ public class ReservationForm {
 	@NotNull(message="人数が未入力です。")
 	@Range(min=1,message="{min}以上の数値を入力してください")
 	private Integer numberOfPeople;
-	@NotBlank(message="日付を指定してください。")
+	@NotNull(message="日付を指定してください。")
 	@Future(message="範囲外の日付です。")
 	private LocalDate reservationDate;
 	
