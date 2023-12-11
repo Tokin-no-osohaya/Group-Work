@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<link rel="stylesheet" href="main.css">
-<meta charset="UTF-8">
-<title>予約完了画面</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="../main.css">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title>予約完了画面</title>
 </head>
 <body>
-	<div align="center">
+	<div class="container">
+		
 		<h2>予約確定いたしました</h2>
 		<p>[[${managementTime}]]</p>
 		<p>予約番号:[[${reservationNumber}]]</p>
@@ -14,9 +16,11 @@
 		<p>作品名:[[${movieTitle}]]</p>
 		<p>人数:[[${numberOfPeople}]]</p>
 		<p>合計金額:[[${totalPrice}]]</p>
-	<form th:action="@{/reservation}"method="get">
+		
+		<form th:action="@{/reservation}"method="get">
 		<input type="submit" value="TOPへ">
-	</form>
+		</form>
+		
 	</div>
 </body>
 </html>

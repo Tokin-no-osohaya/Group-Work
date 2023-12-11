@@ -37,6 +37,11 @@ public class UserDetailsImpl implements UserDetails{
 		return loginUser.getUsername();
 	}
 
+	public Integer getId() {
+		// ログインで利用するユーザー名を返す
+		return loginUser.getId();
+	}
+
 	@Override
 	public boolean isAccountNonExpired() {
 		// ユーザーが期限切れでなければ true を返す

@@ -7,6 +7,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -23,6 +25,7 @@ import com.example.demo.entity.Movie;
 import com.example.demo.entity.Reservation;
 import com.example.demo.form.ReservationForm;
 import com.example.demo.service.ReservationService;
+import com.example.demo.service.userdetails.UserDetailsImpl;
 @Controller
 @RequestMapping("/reservation")
 public class ReservationController {
@@ -75,6 +78,10 @@ public class ReservationController {
 	@PostMapping("confirmComp")
 	public String confirmCompView(ReservationForm reservationForm,Model model) {
 		Reservation reservation = remakeEntity(reservationForm);
+    	Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+    	UserDetailsImpl principal = (UserDetailsImpl)auth.getPrincipal();
+    	Integer userId = principal.getId();
+    	reservation.setId(userId);
 		service.insert(reservation);//DB登録
 				Optional<Reservation>reservationOpt = service.selectOneByReservationNumber(reservation.getReservationNumber());
 				Optional<ReservationForm>reservationFormOpt = reservationOpt.map(t ->remakeForm(t));

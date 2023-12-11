@@ -78,6 +78,16 @@ article.heading{
 	font-weight: bold;
 }
 
+.login{
+	width:80%;
+	margin:0 auto;
+	font-family:'NotoSans','游ゴシック','メイリオ','ヒラギノ角ゴシック','Arial',sans-serif;
+	font-weight: normal;
+	letter-spacing:normal;
+	line-height: 1.5;
+	word-break: break-all;
+}
+
 h1{
 	color: #ec541c;
 	font-family:'キー','游ゴシック','メイリオ','ヒラギノ角ゴシック','Arial',sans-serif;
@@ -100,8 +110,6 @@ nav{
 	padding-top: 5px;
 	box-sizing: border-box;
 }
-
-
 
 p {
 	text-indent: 1em;
@@ -246,6 +254,7 @@ img {
 a{
 	color: #666666;
 	text-decoration:none;
+	display: block;
 }
 
 a:hover{
@@ -256,4 +265,13 @@ a:hover{
 a:visited{
 	color:#666666;
 	text-decoration: none;
+}
+
+button{
+	font-family:'マキナス','游ゴシック','メイリオ','ヒラギノ角ゴシック','Arial',sans-serif;
+	font-size: 20px;
+	background-color: #ec541c;
+	text-decoration: none;
+	max-width: 400px; /* ボタン幅 */
+  	height: 2.0em; /* ボタン高さ */	
 }

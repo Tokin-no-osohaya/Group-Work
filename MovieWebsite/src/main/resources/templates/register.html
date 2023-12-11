@@ -11,19 +11,51 @@
 </head>
 
 <body>
-	<h2>新規登録</h2>
-	<form th:action="@{/register}" method="POST">
-		<label for="username">Username:</label>
-		<input type="text" id="username" name="username" required>
-		<br>
-		<label for="password">Password:</label>
-		<input type="password" id="password" name="password" required>
-		<br>
-		<button type="submit">登録</button>
-	</form>
-	<br>
-	<a th:href="@{/login}">ログイン</a>
-	<div th:if="${error}" class="error" th:text="${error}"></div>
-</body>
+	<header>
+		<div class="title">
+			<h1>キャルシネマ</h1>
+		</div>
+	</header>
+	
+	<div class="container">
+		<div class="login">
+		
+			<h2>新規登録</h2>
+			<br />
+			<form th:action="@{/register}" method="POST">
+				<label for="username">Username:</label>
+				<input type="text" id="username" name="username" required>
+				<br>
+				<br />
+				<label for="password">Password:</label>
+				<input type="password" id="password" name="password" required>
+				<br>
+				<br />
+				<div align="center"><button type="submit">登録</button></div>
+			</form>
+			<br><br />
 
+			<div align="center"><a th:href="@{/login}">ログイン</a>
+			<div th:if="${error}" class="error" th:text="${error}"></div></div>
+		</div>
+	</div>
+
+	<!-- 共通フッター -->
+		<footer>
+			<ul class="footer-link">
+				<li><a href="">企業情報</a></li>
+				<li><a href="">個人情報の取扱いについて</a></li>
+				<li><a href="">特定商取引法に基づく表記</a></li>
+				<li><a href="">ご利用に際して</a></li>
+				<li><a href="">キャルシネマ利用規約</a></li>
+				<li><a href="">Cookieの設定</a></li>
+			</ul>
+	
+		<!-- コピーライト-->
+			<small>&copy; Kohei makes a name of our team.</small>
+	
+		<!-- SNS スクリプトコード -->
+			<div ></div>
+		</footer>
+</body>
 </html>

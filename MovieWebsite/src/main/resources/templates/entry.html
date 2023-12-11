@@ -1,24 +1,29 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<link rel="stylesheet" href="main.css">
-<meta charset="UTF-8">
-<title>予約入力画面</title>
-</head>
-<body>
-	<form th:action="@{/reservation/confirm}"method="post"th:object="${reservationForm}">
-		<div>
-		<label for="movieTitle">作品名</label>
-		<select size="1" name="movieTitle" th:field="*{movieTitle}">作品名:
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="../main.css">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title>予約入力画面</title>
+	</head>
+
+	<body>
+	<div class="container">
+		<form th:action="@{/reservation/confirm}"method="post"th:object="${reservationForm}">
+			<div>
+			<label for="movieTitle">作品名</label>
+			<select size="1" name="movieTitle" th:field="*{movieTitle}">作品名:
 			<option value="" th:disabled="true" th:selected="true">選択してください。</option>
 			<option th:each="m : ${list}" name="movieTitle" th:value="${m.movieTitle}" th:text="${m.movieTitle}" >[[${m.movieTitle}]]</option>
-		</select>
+			</select>
 		</div>
 		
-		<ul th:if="${#fields.hasErrors('movieTitle')}">
-			<li th:errors="*{movieTitle}" style="color:crimson"></li>
-		</ul>
+		<div>
+			<ul th:if="${#fields.hasErrors('movieTitle')}">
+				<li th:errors="*{movieTitle}" style="color:crimson"></li>
+			</ul>
 		</div>
+		
 		<!-- 人数 -->
 		<div>
 			<label for="numberOfPeople">人数:</label>
@@ -26,7 +31,8 @@
 			<ul th:if="${#fields.hasErrors('numberOfPeople')}">
 				<li th:errors="*{numberOfPeople}" style="color:crimson"></li>
 			</ul>
-		</div>	
+		</div>
+		
 		<!-- 予約希望日時(今日～30日) -->
 		<div>
 			<label for="reservationDate">希望日時:</label>
@@ -34,12 +40,12 @@
 			<ul th:if="${#fields.hasErrors('reservationDate')}">
 				<li th:errors="*{reservationDate}" style="color:crimson"></li>
 		</div>
+		
 		<!-- 予約ボタン -->
 		<div>
 			<input type="submit" value="予約する">
 		</div>
-			
-	</form>
-
+		</form>
+	</div>
 </body>
 </html>
